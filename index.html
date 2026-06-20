@@ -1,121 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    html, body {
-    }
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css">
-    <title>Document</title>
-    min-height: 200vh;
-    height: 100%;
-    margin: 0;
-    {% load static %}
-    {% block extra_head %}
-    {% endblock %}
-    footer {
-      background-color: #0d2a4c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .content {
-      flex: 1;
-    }
+    <title>Furkan Harıtlı - Harıtlı Metal</title>
+    <style>
+        body { min-height: 100vh; display: flex; flex-direction: column; }
+        footer { background-color: #0d2a4c; color: white; text-align: center; padding: 20px; margin-top: auto; }
+    </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
-        
+<body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-
-            <a class="navbar-brand" href="http://127.0.0.1:8000">Ana Sayfa</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="index.html">Ana Sayfa</a>
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
-                  {% if user.is_authenticated %}
-                    <p>{{ user.is_authenticated }}python manage.py shell
-                        <p>{{ user.username }}</p></p>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Yönetim</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/duyurular">Duyurular</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/urunler">Ürünler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account/logout">Çıkış Yap</a>
-                    </li>{% endif %}
+                    <li class="nav-item"><a class="nav-link" href="#">Duyurular</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ürünler</a></li>
                 </ul>
-
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account/register">Kayıt Ol</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account/login">Giriş Yap</a>
-                    </li>
-                </ul>
-
             </div>
         </div>
     </nav>
-    {% block content%}
 
-      
-    {% endblock %}
-</body>
+    <div class="container" style="margin-top: 100px;">
+        <h1>Harıtlı Metal'e Hoş Geldiniz</h1>
+        <p>Bilgisayar Mühendisliği projelerim ve metal işleri çalışmalarım.</p>
+    </div>
 
-<footer class="bg-dark text-white pt-4 pb-4 mt-auto"> <!-- mt-auto footer'ı aşağı iter -->
+<footer class="bg-dark text-white pt-4 pb-4">
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex flex-wrap justify-content-between">
-        <!-- Belediye Logosunu Koymak için -->
-        <div class="flex-fill mb-3" style="min-width: 200px;">
-          <img src="logo.png" alt="Harıtlı metal" style="width: 150px;">
-          <p class="mt-2">Harıtlı Metal</p>
+        <div class="flex-fill mb-3">
+          <p>Harıtlı Metal</p>
         </div>
-
-        <!-- İletişim Bilgileri -->
-        <div class="flex-fill mb-3" style="min-width: 200px;">
+        <div class="flex-fill mb-3">
           <h4>İletişim</h4>
-          <p>Adres: Tirebolu / Giresun</p>
+          <p>Tirebolu / Giresun</p>
           <p>Telefon: 05358976885</p>
-          <p>Email: furkanhrtl@gmail.com</p>
         </div>
-
-        <!-- Hızlı Menüler -->
-        <div class="flex-fill mb-3" style="min-width: 200px;">
+        <div class="flex-fill mb-3">
           <h4>Hızlı Menü</h4>
           <ul class="list-unstyled">
-            <li><a href="/" class="text-white text-decoration-none">Ana Sayfa</a></li>
-            <li><a href="http://127.0.0.1:8000/duyurular" class="text-white text-decoration-none">Duyurular</a></li>
-            <li><a href="/haberler" class="text-white text-decoration-none">Haberler</a></li>
-            <li><a href="/iletisim" class="text-white text-decoration-none">İletişim</a></li>
+            <li><a href="index.html" class="text-white text-decoration-none">Ana Sayfa</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Duyurular</a></li>
           </ul>
         </div>
-
-        <!-- Sosyal Medya -->
-        <div class="flex-fill mb-3" style="min-width: 200px;">
+        <div class="flex-fill mb-3">
           <h4>Sosyal Medya</h4>
-          <a href="https://www.facebook.com/haritlimetal?locale=tr_TR" class="text-white me-3">Facebook</a>
-          <a href="#" class="text-white me-3">Twitter</a>
+          <a href="https://www.facebook.com/haritlimetal" class="text-white me-3">Facebook</a>
           <a href="https://www.instagram.com/mustafahrtl/" class="text-white">Instagram</a>
         </div>
       </div>
     </div>
-
-    <div class="text-center mt-3 small text-muted">
-      &copy; 2025 Harıtlı Metal | Tüm hakları saklıdır.
-    </div>
   </div>
 </footer>
+</body>
 </html>
